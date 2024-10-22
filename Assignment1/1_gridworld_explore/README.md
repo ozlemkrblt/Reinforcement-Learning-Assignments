@@ -1,4 +1,48 @@
 
+# Value Estimation in Grid Worlds
+
+It is the **_Assignment 1_** for **Reinforcement Learning** course at University of Tübingen. 
+
+Task is to estimate the values of states for a simple random policy. In the given project, some functionalities needs to be implemented in the file *gridworld.py*. 
+## Python Version, Packages and Libraries
+Python 3 is used for the coding exercises. 
+Packages Installed: 
+- tkinter 
+- numpy 
+
+## File Structure
+- `agent.py`: The file in which we will later write our agents, currently just the random agent is implemented.
+- `mdp.py`: Abstract class for general MDPs.
+- `environment.py`: Abstract class for general reinforcement learning environments (compare to mdp.py)
+- `gridworld.py`: The Gridworld main code and test harness
+- `gridworldclass.py`: Implementation of the Gridworld internals.
+- `utils.py`: some utility code. 
+
+The remaining files `graphicsGridworldDisplay.py`, `graphicsUtils.py`, and `textGridworldDisplay.py` is not used in the scope of this assignment.
+
+## Getting Started & Guidelines
+
+-  To get started, run the Gridworld harness in interactive mode:
+ 
+        python3 gridworld.py -m
+
+
+- You will see a two-exit Gridworld. Your agent’s position is given by the blue dot, and you can move with the arrow keys. The agent’s value estimates are shown, and are all zero. Manual control may be a little frustrating if the noise level is not turned down (-n), since you will sometimes move in an unexpected direction. You can control many aspects of the simulation. A full list is available by running `python3 gridworld.py-h`
+
+- You can check out the other grids, change the noise or discount, change the number of episodes to run and so on. If you drop the manual flag (-m) you will get the RandomAgent by default:
+
+        python3 gridworld.py-g MazeGrid
+
+- You should see the random agent bounce around the grid until it happens upon the exit. 
+
+
+-----
+
+- You can either use the text interface (*-t*) or look at the console output that ac companies the graphical output. 
+- During the manual run through any grid you like, unless you specify quiet (*-q*) output, you will be told about each transition the agent experiences. *Coordinates* are in (row, col) format and any arrays are indexed by *[row][col]*, with ’north’ being the direction of decreasing row, etc. By default, most transitions will receive a reward of zero, though you can change this with the living reward option (*-r*). 
+- Note that, the MDP is such that you first must enter a pre-terminal state and then take the special ’exit’ action before the episode actually ends (*in the true terminal state (-1,-1)*).
+
+
 ## Tasks
 
 Tasks are :
